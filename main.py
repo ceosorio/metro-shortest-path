@@ -5,7 +5,7 @@ import argparse
 import sys
 
 
-def get_path(map, train_color, start, finish):
+def get_path(map, start, finish, train_color=StationType.NORMAL):
     # First, we get the connections to build the graph
     # according to the train color
     try:
@@ -24,13 +24,15 @@ def get_path(map, train_color, start, finish):
 
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Train Path Calculator")
+    parser = argparse.ArgumentParser(description="Train Path Finder")
     parser.add_argument("map", help="Path to JSON map to use")
     parser.add_argument(
-        "color",
+        "-c", "--color",
         help=f"Train Color to use. Can be: {StationType.RED.value}, {StationType.GREEN.value} or {StationType.NORMAL.value}",
     )
     parser.add_argument("start", help="Starting station to use")
-    parser.add_argument("finish", help="End station to use")
+    parser.add_argument("end", help="End station to use")
     args = parser.parse_args(sys.argv[1:])
-    get_path(args.map, args.color, args.start, args.finish)
+    get_path(args.map, args.start, args.end, args.color) if args.color else get_path(
+        args.map, args.start, args.end
+    )
