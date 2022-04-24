@@ -34,5 +34,6 @@ def _colapse_node(node, connections):
     nodes = set(
         list_node for pair in remove_conn for list_node in pair if list_node != node
     )
-    add_conn = list(itertools.combinations(nodes, 2))
+    add_conn = list(map(list, itertools.combinations(nodes, 2)))
+    add_conn = [sorted(conn_array) for conn_array in add_conn]
     return remove_conn, add_conn
