@@ -1,0 +1,56 @@
+{
+  "stations": {
+    "O": "Normal",
+    "A": "Rojo",
+    "B": "Verde",
+    "C": "Normal",
+    "D": "Rojo",
+    "E": "Rojo",
+    "F": "Normal",
+    "G": "Verde",
+    "I": "Verde",
+    "H": "Rojo"
+  },
+  "connections": [
+    [
+      "O",
+      "A"
+    ],
+    [
+      "A",
+      "B"
+    ],
+    [
+      "B",
+      "C"
+    ],
+    [
+      "C",
+      "D"
+    ],
+    [
+      "D",
+      "E"
+    ],
+    [
+      "E",
+      "F"
+    ],
+    [
+      "F",
+      "I"
+    ],
+    [
+      "I",
+      "H"
+    ],
+    [
+      "H",
+      "G"
+    ],
+    [
+      "G",
+      "C"
+    ]
+  ]
+}
