@@ -27,7 +27,12 @@ A->B->C->H->F
 
 Explanations of this arguments are in the [Arguments section](#arguments)
 
+## Testing
 
+Tests are separated in suites, which can be seen in the `test_all.py` file. To run all tests, run the following in the root directory:
+```
+python -m test_all.py
+```
 ## Map Design
 
 The map must be a JSON file with the following structure:
