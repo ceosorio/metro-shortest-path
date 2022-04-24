@@ -31,7 +31,7 @@ Explanations of this arguments are in the [Arguments section](#arguments)
 ## Map Design
 
 The map must be a JSON file with the following structure:
-```json
+```
 {
   "stations": {
     "station_name": "station_type",
