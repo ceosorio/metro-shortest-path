@@ -1,11 +1,13 @@
 import unittest
 from graph_pkg.build_map import _colapse_node, build
 from graph_pkg.constants import StationType
+from os import path
 
+MAP_PATH = path.join('.', 'maps', 'example.json')
 
 class TestMapBuild(unittest.TestCase):
     def test_normal_build(self):
-        connections = build(".\maps\example.json")
+        connections = build(MAP_PATH)
         expected_result = [
             ["A", "B"],
             ["B", "C"],
@@ -20,7 +22,7 @@ class TestMapBuild(unittest.TestCase):
         self.assertEqual(connections, expected_result)
 
     def test_red_build(self):
-        connections = build(".\maps\example.json", StationType.RED)
+        connections = build(MAP_PATH, StationType.RED)
         expected_result = [
             ["C", "H"],
             ["F", "H"],
@@ -29,7 +31,7 @@ class TestMapBuild(unittest.TestCase):
         self.assertIn(expected_result[1], connections)
 
     def test_green_build(self):
-        connections = build(".\maps\example.json", StationType.GREEN)
+        connections = build(MAP_PATH, StationType.GREEN)
         expected_result = [
             ["A", "B"],
             ["B", "C"],
@@ -46,7 +48,7 @@ class TestMapBuild(unittest.TestCase):
 class TestColapseNode(unittest.TestCase):
     def setUp(self):
         # Get connections
-        self.connections = build(".\maps\example.json")
+        self.connections = build(MAP_PATH)
 
     def test_connections_arrays(self):
         remove_connections, add_connections = _colapse_node("H", self.connections)
