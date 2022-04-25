@@ -3,21 +3,24 @@ Script that finds the shortest route in a metro map, according to train type and
 
 ## Setup
 
-This project was made using Python 3.9 and pip, so make sure you have this minimun requirements beforehand. First things first, you would need to install the dependencies. This can be done running the following in the root directory
+This project was made using Python 3.9 and pip, so make sure you have this minimun requirements beforehand. 
+First things first, you would need to install the dependencies. This can be done running the following in the root directory:
+
+
 ```
-pip install -r .\requirements.txt
+pip install -r ./requirements.txt
 ```
 
 ## Usage
 
 Call the script by typing (while in root directory):
 ```
-python .\main.py <map_path> <start_station> <end_station> --color <train_color>
+python ./main.py <map_path> <start_station> <end_station> --color <train_color>
 ```
 
 As an example, run:
 ```
-python .\main.py .\maps\example.json A F --color "Rojo"
+python ./main.py ./maps/example.json A F --color "Rojo"
 ```
 
 This should print the following:
@@ -25,13 +28,13 @@ This should print the following:
 A->B->C->H->F
 ```
 
-Explanations of this arguments are in the [Arguments section](#arguments)
+Explanations of the above mentioned arguments are in the [Arguments section](#arguments)
 
 ## Testing
 
 Tests are separated in suites, which can be seen in the `test_all.py` file. To run all tests, run the following in the root directory:
 ```
-python -m test_all.py
+python -m test_all
 ```
 ## Map Design
 
