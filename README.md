@@ -64,7 +64,7 @@ The available train colors are defined in the  `graph_pkg/constants.py` file. Th
 This script receives 3 positional arguments and 1 optional argument:
 ### Positional Arguments
 
-- Map path: path to a JSON that describes stations and connections in the map. (More details on [map section ])
+- Map path: path to a JSON that describes stations and connections in the map. (More details on [Map Section](#map-design))
 - Start: Starting station to use.
 - End: Ending station to use.
 ### Optional Arguments
